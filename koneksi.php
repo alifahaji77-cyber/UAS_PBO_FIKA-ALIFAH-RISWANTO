@@ -1,18 +1,31 @@
 <?php
 // koneksi.php
 
-// TODO: Sesuaikan KELAS dan NamaLengkap sesuai dengan database Anda
-$host     = "localhost";
-$username = "root";
-$password = "";
-$database = "db_uas_pbo_ti1c_fikaalifahriswanto"; 
+class Koneksi {
+    private $host = "localhost";
+    private $username = "root";
+    private $password = "";
+    private $database = "db_uas_pbo_ti1c_fikaalifahriswanto";
+    public $pdo;
 
-try {
-    $pdo = new PDO("mysql:host=$host;dbname=$database;charset=utf8", $username, $password);
-    // Mengatur error mode ke Exception untuk kemudahan debugging
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (PDOException $e) {
-    die("Koneksi database gagal: " . $e->getMessage());
+    // Constructor otomatis berjalan saat 'new Koneksi()' dipanggil
+    public function __construct() {
+        try {
+            $this->pdo = new PDO(
+                "mysql:host={$this->host};dbname={$this->database};charset=utf8", 
+                $this->username, 
+                $this->password
+            );
+            $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        } catch (PDOException $e) {
+            die("Koneksi database gagal: " . $e->getMessage());
+        }
+    }
 }
+
+// Sekarang baris ini tidak akan error karena 'class Koneksi' sudah terdefinisi di atas
 $koneksibaru = new Koneksi();
+
+// Variabel tunggal $pdo yang digunakan di index.php diambil dari properti milik objek ini
+$pdo = $koneksibaru->pdo;
 ?>
