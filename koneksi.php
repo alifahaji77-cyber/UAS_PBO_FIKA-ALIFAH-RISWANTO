@@ -5,7 +5,7 @@
 $host     = "localhost";
 $username = "root";
 $password = "";
-$database = "DB_PBO_A_BudiSantoso"; 
+$database = "db_uas_pbo_ti1c_fikaalifahriswanto"; 
 
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$database;charset=utf8", $username, $password);
