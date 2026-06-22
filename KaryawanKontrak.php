@@ -18,7 +18,7 @@ class KaryawanKontrak extends Karyawan {
     public function HitungGajiBersih() {
     // Gaji Bersih = hariKerjaMasuk * gajiDasarPerHari
     return $this->hariKerjaMasuk * $this->gajiDasarPerHari;
-}
+    }
 
     // Overriding metode abstrak untuk menampilkan profil
     public function TampilkanProfilKaryawan() {
@@ -28,7 +28,7 @@ class KaryawanKontrak extends Karyawan {
     // Metode khusus untuk mengambil data khusus Karyawan Kontrak dari database
     public static function AmbilDataKontrak($pdo) {
         $sql = "SELECT id_karyawan, nama_karyawan, departemen, hari_kerja_masuk, gaji_dasar_per_hari, durasi_kontrak_bulan, agensi_penyalur 
-                FROM tabel_pendaftaran 
+                FROM tabel_karyawan 
                 WHERE agensi_penyalur IS NOT NULL";
         
         $stmt = $pdo->prepare($sql);

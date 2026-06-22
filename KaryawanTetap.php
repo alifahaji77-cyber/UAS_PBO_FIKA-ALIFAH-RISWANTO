@@ -28,7 +28,7 @@ class KaryawanTetap extends Karyawan {
     // Metode khusus untuk mengambil data khusus Karyawan Tetap dari database
     public static function AmbilDataTetap($pdo) {
         $sql = "SELECT id_karyawan, nama_karyawan, departemen, hari_kerja_masuk, gaji_dasar_per_hari, tunjangan_kesehatan, opsi_saham_id 
-                FROM tabel_pendaftaran 
+                FROM tabel_karyawan 
                 WHERE opsi_saham_id IS NOT NULL";
         
         $stmt = $pdo->prepare($sql);

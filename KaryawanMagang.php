@@ -28,7 +28,7 @@ class KaryawanMagang extends Karyawan {
     // Metode khusus untuk mengambil data khusus Karyawan Magang dari database
     public static function AmbilDataMagang($pdo) {
         $sql = "SELECT id_karyawan, nama_karyawan, departemen, hari_kerja_masuk, gaji_dasar_per_hari, uang_saku_bulanan, sertifikat_kampus_merdeka 
-                FROM tabel_pendaftaran 
+                FROM tabel_karyawan 
                 WHERE sertifikat_kampus_merdeka IS NOT NULL";
         
         $stmt = $pdo->prepare($sql);
