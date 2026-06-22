@@ -16,8 +16,9 @@ class KaryawanKontrak extends Karyawan {
 
     // Overriding metode abstrak untuk menghitung gaji bersih
     public function HitungGajiBersih() {
-        return $this->hariKerjaMasuk * $this->gajiDasarPerHari;
-    }
+    // Gaji Bersih = hariKerjaMasuk * gajiDasarPerHari
+    return $this->hariKerjaMasuk * $this->gajiDasarPerHari;
+}
 
     // Overriding metode abstrak untuk menampilkan profil
     public function TampilkanProfilKaryawan() {

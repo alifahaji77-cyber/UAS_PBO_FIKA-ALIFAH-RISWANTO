@@ -16,8 +16,9 @@ class KaryawanTetap extends Karyawan {
 
     // Overriding metode abstrak (Gaji Pokok + Tunjangan Kesehatan)
     public function HitungGajiBersih() {
-        return ($this->hariKerjaMasuk * $this->gajiDasarPerHari) + $this->tunjanganKesehatan;
-    }
+    // Gaji Bersih = (hariKerjaMasuk * gajiDasarPerHari) + tunjanganKesehatan
+    return ($this->hariKerjaMasuk * $this->gajiDasarPerHari) + $this->tunjanganKesehatan;
+}
 
     // Overriding metode abstrak untuk menampilkan profil
     public function TampilkanProfilKaryawan() {

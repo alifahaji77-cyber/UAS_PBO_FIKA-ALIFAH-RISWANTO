@@ -16,8 +16,9 @@ class KaryawanMagang extends Karyawan {
 
     // Overriding metode abstrak (Uang Saku Bulanan Tetap + Akumulasi Gaji Harian)
     public function HitungGajiBersih() {
-        return ($this->hariKerjaMasuk * $this->gajiDasarPerHari) + $this->uangSakuBulanan;
-    }
+    // Gaji Bersih = (hariKerjaMasuk * gajiDasarPerHari) * 80%
+    return ($this->hariKerjaMasuk * $this->gajiDasarPerHari) * 0.80;
+}
 
     // Overriding metode abstrak untuk menampilkan profil
     public function TampilkanProfilKaryawan() {
