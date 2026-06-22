@@ -1,5 +1,4 @@
 <?php
-// index.php
 
 // 1. Memuat seluruh dependensi file yang dibutuhkan
 require_once 'koneksi.php';
